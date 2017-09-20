@@ -70,7 +70,7 @@ public class DbDAOImpl extends SqlSessionDaoSupport implements DbDAO {
 		Map<String, Object> map = new HashMap<String, Object>();
 		List<String> type = new ArrayList<String>();
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
-		try{
+		
 			String sql = pm.get("sql");
 			sql = sql.trim();
 			map.put("sqlLog", sql);
@@ -117,12 +117,10 @@ public class DbDAOImpl extends SqlSessionDaoSupport implements DbDAO {
 				map.put("row", result);
 			}
 			return map;
-		}catch(Exception e){
-			return null;
 		}
 		
-	}
-
+		
+	
 	@Override
 	public Map<String, Object> runSqls(Map<String, List> pm) throws Exception {
 		List sqls = pm.get("sqls");
