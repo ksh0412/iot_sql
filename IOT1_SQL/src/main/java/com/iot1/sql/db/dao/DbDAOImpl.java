@@ -126,6 +126,7 @@ public class DbDAOImpl extends SqlSessionDaoSupport implements DbDAO {
 		List sqls = pm.get("sqls");
 		String sql = "", sqlObj = "";
 		Connection con = null;
+		int sss=0;
 		if(con==null){
 			con = dsf.getSqlSession().getConnection();
 		}
@@ -134,8 +135,11 @@ public class DbDAOImpl extends SqlSessionDaoSupport implements DbDAO {
 		List<String> type = new ArrayList<String>();
 		ArrayList logList = new ArrayList();
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		Map<Integer, Integer> hm2 = new HashMap<Integer, Integer>();
+		Map<Integer, List> hm3 = new HashMap<Integer, List>();
 //		Statement statement = dsf.getSqlSession().getConnection().createStatement();
-		for (int j = 0, max = sqls.size(); j < max; j++) {
+		int j = 0;
+		for (j=0;j<sqls.size(); j++) {
 			sqlObj = (String) sqls.get(j);
 			sql = sqlObj.trim();
 			logList.add(sql+"</br>");
@@ -155,8 +159,12 @@ public class DbDAOImpl extends SqlSessionDaoSupport implements DbDAO {
 						hm.put(column, resultSet.getString(column));
 					}
 					list.add(hm);
+					hm2.put(j, list.size());
+					hm3.put(j, list);
 				}
 
+				map.put("length", hm2);
+				map.put("divi", hm3);
 				map.put("type", type);
 				map.put("list", list);
 				map.put("columns", columns);

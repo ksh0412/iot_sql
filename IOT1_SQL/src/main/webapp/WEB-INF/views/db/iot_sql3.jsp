@@ -86,6 +86,8 @@
 		var key = result.key;
 		var obj = result[key];
 		var log = result.log;
+		var sqlName = "";
+		var length = obj.length;
 		if (log == "success") {
 			var type = obj.type;
 			var row = obj.row;
@@ -99,7 +101,8 @@
 				var sqlName = sqlLog.substr(sqlLog.indexOf("from")+5);
 			}else{
 			for(var i=0, max=sqlLog.length;i<max;i++){
-			var sqlName = sqlLog[i].substr(sqlLog[i].indexOf("from")+5, sqlLog[i].lastIndexOf("<"));
+			var sqlName1 = sqlLog[i].substr(sqlLog[i].indexOf("from")+5);
+			sqlName = sqlName1.substr(0,sqlName1.lastIndexOf("<"));
 			}
 			}
 			try {
@@ -116,7 +119,22 @@
 				sortable : true,
 				pageable : true
 			}
-			for(var i=0;i<=2;i++){
+			var realLength = 0;
+			for(var i=0;i<2;i++){
+			if(i==0){
+			realLength = length[0];	
+			}else{
+				realLength = length[i] - length[i-1];
+			}
+			gridParam = {
+					dataSource : {
+						data : gridData,
+						pageSize : 5
+					},
+					editable : false,
+					sortable : true,
+					pageable : true
+				}
 			var grid = $("#resultGrid"+i).kendoGrid(gridParam);
 			}
 			kendoConsole.log(sqlLog + "(CRUD타입: " + type
