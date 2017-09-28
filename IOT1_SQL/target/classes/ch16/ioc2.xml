@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+
+	<aop:config>
+		<aop:aspect id="helloAspect" ref="myAroundAdvice">
+			<aop:pointcut id="selectHello1"
+				expression="execution(* test.biz.tj.ch15.*Msg.*(..))" />
+			<aop:around pointcut-ref="selectHello1" method="setAdvice" />
+		</aop:aspect>
+	</aop:config>
+	<bean id="pMsg1" class="test.biz.tj.ch15.PrintMsg" />
+	<bean id="pMsg2" class="test.biz.tj.ch15.PrintMsg2" />
+	
+	<bean id="myAroundAdvice" class="test.biz.tj.ch15.MyAroundAdvice" />
+</beans>
