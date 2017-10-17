@@ -24,6 +24,7 @@ public class GoodsDaoImpl extends SqlSessionDaoSupport implements GoodsDao {
 	@Override
 	public List<GoodsInfo> selectGoodsInfoList(GoodsInfo gi) {
 		System.out.println(customForm.getLoggingType());
+		List li = this.getSqlSession().selectList("goods.SELECT_GOODS", gi);
 		return this.getSqlSession().selectList("goods.SELECT_GOODS", gi);
 	}
 
