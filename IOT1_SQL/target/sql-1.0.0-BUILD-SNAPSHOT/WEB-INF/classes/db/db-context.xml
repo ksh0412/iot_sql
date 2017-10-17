@@ -10,7 +10,7 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>classpath:/db/db.properties</value>
+				<value>classpath:/db/*.properties</value>
 			</list>
 		</property>
 	</bean>
@@ -42,7 +42,7 @@
 	</bean>
 	
 	<aop:config proxy-target-class="true">
-		<aop:pointcut id="txAdvisePointCut" expression="execution(* com.test..service.*Service.*(..))"/>
+		<aop:pointcut id="txAdvisePointCut" expression="execution(* com.iot1.sql..service.*Service.*(..))"/>
 		<aop:advisor id="transactionAdvisor" pointcut-ref="txAdvisePointCut" advice-ref="txAdvice"/>
 	</aop:config>
 	
@@ -64,3 +64,4 @@
 	</bean>
 	
 </beans>
+

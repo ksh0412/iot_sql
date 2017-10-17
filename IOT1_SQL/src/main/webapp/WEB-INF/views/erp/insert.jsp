@@ -70,7 +70,7 @@
 		
 		<tr>
 			<td class="col-md-2" style="vertical-align:middle" bgcolor="cccccc">직위/직급</td>
-			<td class="col-md-4"><button type="button" data-toggle="modal" data-target="#myModal2" > 선택되지않음 </button>
+			<td class="col-md-4"><div id="td1"><input type="button" data-toggle="modal" data-target="#myModal2" value="선택되지않음"/></div>
 		 <!-- 모달 팝업 -->
 		 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" > 
 		 <div class="modal-dialog"> <div class="modal-content"> 
@@ -85,7 +85,7 @@
 			<td align="center" style="vertical-align:middle" bgcolor="cccccc">직급명</td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle">001</td>
+			<td align="center" style="vertical-align:middle" id="td2">001</td>
 			<td align="center" style="vertical-align:middle">사장</td>
 			</tr>
 			<tr>
@@ -314,6 +314,12 @@
 
 <script type="text/javascript">
 
+$("#td2").click(function(){
+	var str = "<input type='button' data-toggle='modal' data-target='#myModal2' value=" + document.getElementById("td2").innerHTML + " />";
+	$("#td1").html(str);
+})
+
+
   function PreviewImage() {
     var oFReader = new FileReader();
     oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
@@ -326,5 +332,6 @@
   function searchAddress(){
   	window.open('/erp/address','winname','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
   }
+  
 
 </script>

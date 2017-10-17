@@ -1,16 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="kendo" uri="http://www.kendoui.com/jsp/tags"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
+<%@ include file="/WEB-INF/views/common/common.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<c:set var="pVar" value="1.3.2"/>
-<c:set var="rootPath" value="${pageContext.request.contextPath}"/>
-<c:set var="nowUrl" value="${pageContext.request.requestURI}"/>
 <script src="<c:url value='/resources/js/jquery.min.js' />"></script>
 <script src="<c:url value="/resources/js/jquery-ui-1.9.2.custom.js?version=${pVar}"/>"></script>
 <script src="<c:url value="/resources/js/jquery.fileupload.js?version=${pVar}"/>"></script>
@@ -18,12 +14,12 @@
 <script src="<c:url value="/resources/ui/common.js?version=${pVar}"/>"></script>
 <script src="<c:url value="/resources/ui/btsp3.7.7/js/bootstrap.min.js?version=${pVar}"/>"></script>
 <script src="<c:url value="/resources/ui/btsp3.7.7/js/bootstrap-table.js?version=${pVar}"/>"></script>
-<script src="<c:url value="/resources/ui/btsp3.7.7/js/bootstrap-table.js?version=${pVar}"/>"></script>
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
 <script src="<c:url value='/resources/js/kendo.all.min.js' />"></script>
 <script src="<c:url value='/resources/js/kendo.timezones.min.js' />"></script>
 <script src="<c:url value='/resources/shared/js/console.js'/>"></script>
 <script src="<c:url value='/resources/shared/js/prettify.js'/>"></script>
+<script src="<c:url value="/resources/js/console.js?version=${pVar}"/>"></script>
 <link rel="stylesheet" href="<c:url value="/resources/ui/btsp3.7.7/css/bootstrap-theme.min.css?version=${pVar}"/>"/>
 <link rel="stylesheet" href="<c:url value="/resources/ui/btsp3.7.7/css/bootstrap.min.css?version=${pVar}"/>"/>
 <link rel="stylesheet" href="<c:url value="/resources/ui/btsp3.7.7/css/bootstrap-table.css?version=${pVar}"/>"/>
@@ -36,10 +32,43 @@
 <link href="<c:url value='/resources/css/dataviz/kendo.dataviz.default.min.css'/>" rel="stylesheet" />
 <link href="<c:url value='/resources/shared/styles/examples-offline.css'/>" rel="stylesheet"/>
 <script>
+ 
 $(document).ready(function(){
 	var nowUrl = "${nowUrl}";
 	var obj = $("a[href='" + nowUrl + "']").parent().attr("class","active");
 })
+var KendoItem = function(obj, grid,url, keyStr){
+	var selectValue = obj.dataItem(obj.select())[keyStr];
+	this.key = keyStr;
+	this.param = {};
+	this.param[keyStr]=selectValue;
+	var gridObj = grid.data("kendoGrid");
+	gridObj.dataSource.transport.param = this.param;
+	var reload = function(options){
+        $.ajax({
+        	type : "post",
+			url : url,
+			dataType : "json",
+			data : JSON.stringify(this.param),
+		    beforeSend: function(xhr) {
+		        xhr.setRequestHeader("Content-Type", "application/json");
+		    },
+		    success : function(result){
+		    	if(result.key){
+		    		result = result[result.key];
+		    	}
+		    	options.success(result);
+			},
+			error : function(xhr){
+				alert(xhr.responseText);
+			}
+        });
+	}
+	this.send = function(){
+	    gridObj.dataSource.transport.read = reload;
+		gridObj.dataSource.read();
+	}
+}
 var JSException = function(msg){
 	alert(msg);
 	console.log(msg);
@@ -109,31 +138,3 @@ var AjaxUtil = function (url, params, type, dataType){
 }
 
 </script>
-<body>
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#bs-example-navbar-collapse-1">
-				<span class="fa fa-bars fa-lg"></span>
-			</button>
-			<a class="navbar-brand" href="/main.jsp"> IOT
-			</a>
-		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
-
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/board/board_select.jsp">게시판</a></li>
-				<li><a href="/user/login.jsp">유저정보</a></li>
-				<li><a href="/user/role_select.jsp">권한정보가기</a></li>
-				<li><a href="/user/logout_ok.jsp">로그아웃</a></li>
-			</ul>
-		</div>
-		<!-- /.navbar-collapse -->
-	</div>
-	<!-- /.container-->
-</nav>
