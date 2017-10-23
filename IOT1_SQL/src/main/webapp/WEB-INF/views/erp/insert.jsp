@@ -61,12 +61,12 @@
 			<td align="center" style="vertical-align:middle" bgcolor="cccccc">그룹명</td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd1, outTd1, myModal)" id="inTd1">001</a></td>
-			<td align="center" style="vertical-align:middle" id="td2">경력</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd1, outTd1, myModal)">001</a></td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd1, outTd1, myModal)" id="inTd1">경력</a></td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd2, outTd1, myModal)" id="inTd2">002</a></td>
-			<td align="center" style="vertical-align:middle" id="td3">신입</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd2, outTd1, myModal)">002</a></td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd2, outTd1, myModal)" id="inTd2">신입</a></td>
 			</tr>
 			</table>	
 		  </div> </div> </div> </div> </td>
@@ -89,12 +89,12 @@
 			<td align="center" style="vertical-align:middle" bgcolor="cccccc">직급명</td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd3, outTd2, myModal2)" id="inTd3">001</a></td>
-			<td align="center" style="vertical-align:middle">사장</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd3, outTd2, myModal2)">001</a></td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd3, outTd2, myModal2)" id="inTd3">사장</a></td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd4, outTd2, myModal2)" id="inTd4">002</a></td>
-			<td align="center" style="vertical-align:middle">주임</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd4, outTd2, myModal2)">002</a></td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd4, outTd2, myModal2)" id="inTd4">주임</a></td>
 			</tr>
 			</table>	
 		  </div> </div> </div> </div> </td>
@@ -115,12 +115,12 @@
 			<td align="center" style="vertical-align:middle" bgcolor="cccccc">그룹명</td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd5, outTd3, myModal3)" id="inTd5">001</a></td>
-			<td align="center" style="vertical-align:middle">팀원</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd5, outTd3, myModal3)">001</a></td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd5, outTd3, myModal3)" id="inTd5">팀원</a></td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd6, outTd3, myModal3)" id="inTd6">002</a></td>
-			<td align="center" style="vertical-align:middle">팀장</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd6, outTd3, myModal3)">002</a></td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd6, outTd3, myModal3)" id="inTd6">팀장</a></td>
 			</tr>
 			</table>	
 		  </div> </div> </div> </div> </td>
@@ -167,12 +167,12 @@
 			<td align="center" style="vertical-align:middle" bgcolor="cccccc">부서명</td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd7, outTd4, myModal4)" id="inTd7">001</a></td>
-			<td align="center" style="vertical-align:middle">개발팀</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd7, outTd4, myModal4)">001</a></td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd7, outTd4, myModal4)" id="inTd7">개발팀</a></td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd8, outTd4, myModal4)" id="inTd8">002</a></td>
-			<td align="center" style="vertical-align:middle">고객지원팀</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd8, outTd4, myModal4)">002</a></td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd8, outTd4, myModal4)" id="inTd8">고객지원팀</a></td>
 			</tr>
 			</table>	
 		  </div> </div> </div> </div> </td>
@@ -193,12 +193,12 @@
 			<td align="center" style="vertical-align:middle" bgcolor="cccccc">프로젝트명</td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd9, outTd5, myModal5)" id="inTd9">001</a></td>
-			<td align="center" style="vertical-align:middle">프로젝트A</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd9, outTd5, myModal5)">001</a></td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd9, outTd5, myModal5)" id="inTd9">프로젝트A</a></td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd10, outTd5, myModal5)" id="inTd10">002</a></td>
-			<td align="center" style="vertical-align:middle">프로젝트Z</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd10, outTd5, myModal5)">002</a></td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd10, outTd5, myModal5)" id="inTd10">프로젝트Z</a></td>
 			</tr>
 			</table>	
 		  </div> </div> </div> </div> </td>
@@ -223,10 +223,10 @@
 			<td align="center" style="vertical-align:middle" bgcolor="cccccc">언어</td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd11, outTd6, myModal6)" id="inTd11">한국어</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd11, outTd6, myModal6)" id="inTd11">한국어</a></td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd12, outTd6, myModal6)" id="inTd12">영어</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd12, outTd6, myModal6)" id="inTd12">영어</a></td>
 			</tr>
 			</table>	
 		  </div> </div> </div> </div> </td>
@@ -249,12 +249,12 @@
 			<td align="center" style="vertical-align:middle" bgcolor="cccccc">은행명</td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd13, outTd7, myModal7)" id="inTd13">001</a></td>
-			<td align="center" style="vertical-align:middle">남자은행</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd13, outTd7, myModal7)">001</a></td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd13, outTd7, myModal7)" id="inTd13">남자은행</a></td>
 			</tr>
 			<tr>
-			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd14, outTd7, myModal7)" id="inTd14">002</a></td>
-			<td align="center" style="vertical-align:middle">나무은행</td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd14, outTd7, myModal7)">002</a></td>
+			<td align="center" style="vertical-align:middle"><a onclick="insertValue(inTd14, outTd7, myModal7)" id="inTd14">나무은행</a></td>
 			</tr>
 			</table>	
 		  </div> </div> </div> </div> 
@@ -289,7 +289,7 @@
 		
 		<tr>
 			<td class="col-md-2" style="vertical-align:middle" bgcolor="cccccc">사진</td>
-			<td class="col-md-4" colspan="4"><input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage()" /></td>
+			<td class="col-md-4" colspan="4"><input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage()" style="display: inline"/><a onclick="deletePic()">사진삭제</a></td>
 		</tr>
 		
 		<tr>
@@ -302,7 +302,7 @@
 			<td class="col-md-4" colspan="4"><input type="file"/></td>
 		</tr>
 		</table>
-		<input type="button" value="저장" />
+		<input type="button" value="저장" /><input type="button" value="신규" /><input type="button" value="삭제" /><input type="button" value="리스트" />
 		</div>
 		
 		
@@ -340,7 +340,9 @@ function insertValue(id, id2, id3){
 	$('.modal').modal('hide');
 }
 
-
+function deletePic(){
+	$('#uploadPreview').attr('src', '');
+}
 
   function PreviewImage() {
     var oFReader = new FileReader();
